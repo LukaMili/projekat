@@ -19,13 +19,19 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/stil.css') }}" rel="stylesheet">
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
+
+
+<body background= "slike/teren.jpg" >
+     <div class="container">
+         <div class="jumbotron" id="glavnijumbotron">
+            <a href="/"><img src="slike/dunkster3-logo-transparent-cropped.png"></a>
+         </div>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
+           
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <span style="color:orange">Dunkster</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -34,7 +40,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                                    <li class="nav-item active">
+                    <a class="nav-link" href="/">Pocetna <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/onama">O nama</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/prodavnica">Prodavnica</a>
+                  </li>
+                 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -68,12 +83,34 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
+            
         </nav>
-
-        <main class="py-4">
+         
+         
+     
+         <main>
             @yield('content')
         </main>
     </div>
 </body>
+
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky-top")
+  } else {
+    navbar.classList.remove("sticky-top");
+  }
+}
+</script>
 </html>

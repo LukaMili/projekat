@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.pocetna');
 });
+
+Route::get('/', 'PagesController@pocetna')->name('pocetna');
+Route::get('/onama', 'PagesController@onama')->name('onama');
+Route::get('/prodavnica', 'PagesController@prodavnica')->name('prodavnica');
 
 Auth::routes();
 
