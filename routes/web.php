@@ -19,6 +19,9 @@ Route::get('/', 'PagesController@pocetna')->name('pocetna');
 Route::get('/onama', 'PagesController@onama')->name('onama');
 Route::get('/prodavnica', 'PagesController@prodavnica')->name('prodavnica');
 
+Route::get('/odeca', 'KategorijeController@odeca')->name('odeca');
+Route::get('/obuca', 'KategorijeController@obuca')->name('obuca');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
