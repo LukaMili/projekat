@@ -45,7 +45,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active">
-                    <a class="nav-link" href="/">Pocetna <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/home">Pocetna <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/onama">O nama</a>
