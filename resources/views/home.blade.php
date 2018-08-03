@@ -6,34 +6,91 @@
     <!--PRIKAZ ZA KORISNIKA -->
     
         <div class="jumbotron">
-            Ulogovani ste kao {{auth()->user()->role}}
+            <div class="row">
+                <div class="col md-6 offset-2">
+            Ulogovani ste kao  <strong>{{auth()->user()->role}}</strong>
+                </div>  
+            </div>
             <br><br>
-            Stanje na racunu {{auth()->user()->stanjeRacuna}}
+            <div class="row">
+                <div class="col md-6">
+            Stanje na racunu: <strong>{{auth()->user()->stanjeRacuna}} din</strong> 
+                </div>
+                <div class="col md-6">
+            <a href=""> <div class="btn btn-sm btn-secondary" id="dugme">Uplatite sredstva</div></a>
+                </div>
+            </div>
             
-            <a href=""> <div class="btn btn-sm btn-secondary">Uplatite sredstva</div></a>
             <br><br>
+            
+            <div class="row">
+                <div class="col md-6">
               Pregled kupovina i racuna
-             <a href=""> <div class="btn btn-sm btn-secondary">Pregled kupovina</div></a>
+                </div>
+                <div class="col md-6">
+             <a href=""> <div class="btn btn-sm btn-secondary" id="dugme">Pregled kupovina</div></a>
+                </div>
+            </div>
              <br><br>
+             <div class="row">
+                <div class="col md-6">
               Moja korpa
-             <a href=""> <div class="btn btn-sm btn-secondary">Moja korpa</div></a>
+                </div>
+                <div class="col md-6">
+                    <a href=""> <div class="btn btn-sm btn-secondary" id="dugme">Moja korpa</div></a>
+                </div>
+            </div>
         </div>
 
     @else
+        
     <!--PRIKAZ ZA ADMINA -->
 
-       <div class="jumbotron">
-           Zdravo admine <br>
+    <div class="jumbotron">
+            <div class="row">
+                <div class="col md-6 offset-2">
+                    Ulogovani ste kao  <strong><span style="color:green">{{auth()->user()->role}}</span> - {{auth()->user()->name}}</strong>
+                </div>  
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col md-6">
+            Pregled korisnika i promovisanje uloge 
+                </div>
+                <div class="col md-6">
+            <a href="/home/korisnici"> <div class="btn btn-sm btn-secondary" id="dugme">Pregled korisnika</div></a>
+                </div>
+            </div>
             
-            Pregled korisnika i promovisanje uloge
-             <a href=""> <div class="btn btn-sm btn-secondary">Pregled korisnika</div></a>
-             <br><br>
+            <br><br>
+            
+            <div class="row">
+                <div class="col md-6">
               Pregled proizvoda i dodavanje novih
-             <a href=""> <div class="btn btn-sm btn-secondary">Pregled proizvoda</div></a>
+                </div>
+                <div class="col md-6">
+             <a href=""> <div class="btn btn-sm btn-secondary" id="dugme">Pregled proizvoda</div></a>
+                </div>
+            </div>
              <br><br>
+             <div class="row">
+                <div class="col md-6">
               Pregled kupovina i racuna
-             <a href=""> <div class="btn btn-sm btn-secondary">Pregled kupovina</div></a>
+                </div>
+                <div class="col md-6">
+                    <a href=""> <div class="btn btn-sm btn-secondary" id="dugme">Pregled kupovina</div></a>
+                </div>
+            </div>
         </div>
-    
+        
+       
+        
     @endif
+    
+  
     @endsection
+
+    
+    
+    
+  

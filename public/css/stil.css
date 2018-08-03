@@ -16,6 +16,12 @@ body{
       background-repeat: no-repeat; 
 }
 
+#dugme{
+    width: 25%;
+}
 
+#jumb{
+    background-color: rgba(255,255,255,0.7);
+}
 
 
