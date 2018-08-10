@@ -4,17 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/home.blade.php</file>
-            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/app/Http/Controllers/Auth/RegisterController.php</file>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/routes/web.php</file>
-            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/.env</file>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/public/css/stil.css</file>
-            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/app/Http/Controllers/Auth/LoginController.php</file>
-            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/pages/pocetna.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/app/Http/Controllers/AdministracijaController.php</file>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/pages/onama.blade.php</file>
-            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/app/Http/Controllers/HomeController.php</file>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/layouts/app.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/app/Http/Controllers/KategorijeController.php</file>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/pages/prodavnica.blade.php</file>
-            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/app/Http/Controllers/PagesController.php</file>
+            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/admin/tabelakorisnika.blade.php</file>
         </group>
     </open-files>
 </project-private>

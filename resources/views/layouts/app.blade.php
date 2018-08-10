@@ -22,15 +22,15 @@
     <link href="{{ asset('css/stil.css') }}" rel="stylesheet">
     
             <head>
-          <link rel="shortcut icon" type="image/x-icon" href="slike/favicon.ico" />
+          <link rel="shortcut icon" type="image/x-icon" href="{{asset('slike/favicon.ico')}}" />
         </head>
 </head>
 
 
-<body background= "slike/teren.jpg" >
+<body background= "{{asset('slike/teren.jpg')}}" >
      <div class="container">
          <div class="jumbotron" id="glavnijumbotron">
-            <a href="/"><img src="slike/dunkster3-logo-transparent-cropped.png"></a>
+            <a href="/"><img src="{{asset('slike/dunkster3-logo-transparent-cropped.png')}}"></a>
          </div>
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
            

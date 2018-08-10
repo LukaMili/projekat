@@ -22,7 +22,13 @@ Route::get('/prodavnica', 'PagesController@prodavnica')->name('prodavnica');
 Route::get('/odeca', 'KategorijeController@odeca')->name('odeca');
 Route::get('/obuca', 'KategorijeController@obuca')->name('obuca');
 
+
+//administracija routes
 Route::get('/home/korisnici', 'AdministracijaController@VratiKorisnike')->name('korisnici');
+Route::post('/home/BrisanjeKorisnika', ['uses'=>'AdministracijaController@BrisanjeKorisnika']);
+Route::get('/home/NalogKorisnika', ['uses'=>'AdministracijaController@NalogKorisnika','as'=>'NalogKorisnika']);
+Route::get('/Administracija/Roba', ['uses'=>'AdministracijaController@AdministracijaRobe','as'=>'AdministracijaRobe']);
+Route::post('/home/Promote', 'AdministracijaController@Promote');
 
 
 Auth::routes();

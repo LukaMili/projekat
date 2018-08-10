@@ -1,16 +1,18 @@
-
 @extends('layouts.app')
 @section('content')
 
-    <div class="jumbotron">
-        <div class="row">
-            <div class="col col-auto">
-        <div class="table-primary table table-bordered">
+<div class="wrapper" style="background-color: beige;padding-bottom: 25px;">
+         <div class="col-md-12">
+             <br><br>
+             <h2 style="color: ">Lista korisnika</h2>
+             <br><br>
+            
                 
             
             
-            <table>
+             <table class="table-bordered table table-dark" style="background-color: threeddarkshadow">
             
+                 <thead>
                 <tr>
                     <th style="text-align: center">
                         Username
@@ -33,8 +35,9 @@
                         Funkcije
                     </th>
                 </tr>
+                 </thead>
         
-            
+                 <tbody>
             @foreach($korisnici as $k)
                 
             
@@ -64,26 +67,72 @@
                     {{$k->stanjeRacuna}} din
                     </td>
                  
-                    <td>
-                      @if (Auth::user()->name==$k->name )  @else <button>Izbrisi</button> <button>Unapredi</button> @endif   
-                    </td>
+                     <td>
+                
+                <div class="row">
+                    @if (Auth::user()->name == $k->name )
                     
+                    @else
+                   
+                    <div class="col-md-4">
+                    <form method="get" action="{{action ('AdministracijaController@NalogKorisnika') }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" value="{{$k->id}}" name="id"/>
+                    <button title="Pogledaj nalog"  type="submit" class="btn btn-primary"> Nalog korisnika</button>
+                    </form>
+                    </div>
+                    
+                    
+                    <div class="col-md-4">
+                    <form method="post" action="{{action ('AdministracijaController@BrisanjeKorisnika') }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" value="{{$k->id}}" name="id"/>
+                    <button title="Obrisi"  type="submit" class="btn btn-warning" onclick="return confirm('jeste li sigurni da zelite da obrisete ovog korisnika?')">Obrisi korisnika</button>
+                    </form>
+                    </div>
+                    
+                     @if($k->role=='admin')
+                    <div class="col-md-4">
+                    <form method="post" action="{{action ('AdministracijaController@Promote') }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" value="{{$k->id}}" name="id"/>
+                    <button title="Demote" value="Demote" type="submit" class="btn btn-light" onclick="return confirm('jeste li sigurni da ovog ovog korisnika zelite da postavite na ulogu korisnika?')">
+                        Demote</button>
+                    </form>
+                    </div>
+                    @else
+                    <div class="col-md-4">
+                    <form method="post" action="{{action ('AdministracijaController@Promote') }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" value="{{$k->id}}" name="id"/>
+                    <button title="Promote" value="Promote"  type="submit" class="btn btn-light" onclick="return confirm('jeste li sigurni da zelite da postavite ovog korisnika za administratora?')">
+                        Promote</button>
+                    </form>
+                    </div>
+                    @endif
+                    
+                    @endif
+                    
+                    
+                    
+                    
+                </div>
+                </td>
                 </tr>
            
             @endforeach
             
-            
+                 </tbody>
             </table>
             
             </div>
-                
+    </div>   
                 
                     
-                
-            </div>
-            </div>
+            
+           
                       
-        </div>
+        
             
            
             
