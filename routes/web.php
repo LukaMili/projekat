@@ -19,8 +19,9 @@ Route::get('/', 'PagesController@pocetna')->name('pocetna');
 Route::get('/onama', 'PagesController@onama')->name('onama');
 Route::get('/prodavnica', 'PagesController@prodavnica')->name('prodavnica');
 
-Route::get('/odeca', 'KategorijeController@odeca')->name('odeca');
-Route::get('/obuca', 'KategorijeController@obuca')->name('obuca');
+Route::get('/prodavnica/odeca', 'KategorijeController@odeca')->name('odeca');
+Route::get('/prodavnica/obuca', 'KategorijeController@obuca')->name('obuca');
+Route::get('/prodavnica/aksesoari', 'KategorijeController@Aksesoari')->name('aksesoari');
 
 
 //administracija routes

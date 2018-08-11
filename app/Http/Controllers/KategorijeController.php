@@ -16,6 +16,10 @@ class KategorijeController extends Controller
         return view('kategorije.obuca');
     }
     
+     public function Aksesoari(){
+        return view('kategorije.aksesoari');
+     }
+    
     
       
     

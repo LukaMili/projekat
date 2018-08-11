@@ -8,7 +8,7 @@
         <div class="jumbotron">
             <div class="row">
                 <div class="col md-6 offset-2">
-            Ulogovani ste kao  <strong>{{auth()->user()->role}}</strong>
+                    Ulogovani ste kao <strong><span style="color: goldenrod">{{Auth::user()->role}}</span> {{auth()->user()->role}}</strong>
                 </div>  
             </div>
             <br><br>
