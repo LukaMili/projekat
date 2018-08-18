@@ -21,9 +21,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/stil.css') }}" rel="stylesheet">
     
-            <head>
-          <link rel="shortcut icon" type="image/x-icon" href="{{asset('slike/favicon.ico')}}" />
-        </head>
+           
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('slike/favicon.ico')}}" />
+        
+        
 </head>
 
 
@@ -44,12 +45,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item active">
-                    <a class="nav-link" href="/home">Pocetna <span class="sr-only">(current)</span></a>
+                                    <li class="nav-item">
+                    <a class="nav-link" href="/">Pocetna <span class="sr-only">(current)</span></a>
                   </li>
+                  @if(Auth::user())
                   <li class="nav-item">
-                    <a class="nav-link" href="/onama">O nama</a>
+                    <a class="nav-link" href="/nalog">Nalog</a>
                   </li>
+                  @endif
                   <li class="nav-item">
                     <a class="nav-link" href="/prodavnica">Prodavnica</a>
                   </li>

@@ -11,9 +11,9 @@ class PagesController extends Controller
             return view('pages.pocetna');
         }
     
-         public function onama()
+         public function nalog()
         {
-            return view('pages.onama');
+            return view('pages.nalog');
         }
           public function prodavnica()
         {

@@ -1,6 +1,16 @@
 @extends('layouts.app')
 @section('content')
 
+    <!-- Responsive design -->
+<style>
+    @media screen and (max-width: 992px) {
+        .nestaje{
+            display: none;
+        }
+}
+
+</style>
+
 <div class="wrapper" style="background-color: beige;padding-bottom: 25px;">
          <div class="col-md-12">
              <br><br>
@@ -19,15 +29,15 @@
                     </th>
                 
                 
-                    <th style="text-align: center">
+                    <th class="nestaje" style="text-align: center">
                        Email adresa
                     </th>
                     
-                     <th style="text-align: center">
+                     <th  class="nestaje" style="text-align: center">
                         Role
                     </th>
                     
-                     <th style="text-align: center">
+                     <th class="nestaje" style="text-align: center">
                         Raspoloziva sredstva
                     </th>
                     
@@ -56,15 +66,15 @@
                            <!--   Podesiti da ucita samo izabranog korisnika   -->
                     </td>
    
-                    <td>
+                    <td class="nestaje">
                     {{$k->email}}
                     </td>
                     
-                    <td>
+                    <td class="nestaje">
                         {{$k->role}} &nbsp 
                     </td>
                     
-                    <td style="text-align: center">
+                    <td class="nestaje" style="text-align: center">
                     {{$k->stanjeRacuna}} din
                     </td>
                  

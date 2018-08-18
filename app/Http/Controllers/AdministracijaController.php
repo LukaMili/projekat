@@ -4,6 +4,7 @@ namespace Laravel\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Laravel\User;
+use Laravel\Kategorija;
 
 class AdministracijaController extends Controller
 {
@@ -18,7 +19,7 @@ class AdministracijaController extends Controller
     {
         $nes = $req->id;
         User::destroy([$nes]);
-        return redirect('/home/korisnici');
+        return redirect('/nalog/korisnici');
     }
     
     public function NalogKorisnika(Request $req)
@@ -27,7 +28,7 @@ class AdministracijaController extends Controller
         $trans = $user->Transakcije;
         $data = ['user' => $user,'Transakcije' => $trans];
         
-        return view('korisnik.nalog')->with('data',$data);
+        return view('korisnik.nalogizabranog')->with('data',$data);
     }
     
      Public function  Promote(Request $req)
@@ -45,6 +46,29 @@ class AdministracijaController extends Controller
         
         return redirect()->back();
         
+    }
+    
+     public function DodajProizvod()
+    {
+        $kategorije = Kategorija::all();
+        $data = ['kategorije' => $kategorije];
+        return view('admin.dodajproizvod')->with('data',$data);
+    }
+    public function DodavanjeProizvoda(Request $req)
+    {
+        $photoName = time().'.'.$req->slika->getClientOriginalExtension();
+        $req->slika->move(public_path('SlikeProizvoda'), $photoName);
+        $proizvod = new Proizvod();
+        $proizvod->naziv = $req->naziv;
+        $proizvod->opis = $req->opis;
+        $proizvod->kategorija_id = $req->kategorija;
+        $proizvod->slika = $photoName;
+        $proizvod->kolicina = $req->broj;
+        $proizvod->cenaPoKomadu = $req->cena;
+        $proizvod->save();
+        
+        
+         return view('admin/listaproizvoda');
     }
 
 }

@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'PagesController@pocetna')->name('pocetna');
-Route::get('/onama', 'PagesController@onama')->name('onama');
+Route::get('/nalog', 'PagesController@nalog')->name('nalog');
 Route::get('/prodavnica', 'PagesController@prodavnica')->name('prodavnica');
 
 Route::get('/prodavnica/odeca', 'KategorijeController@odeca')->name('odeca');
@@ -25,11 +25,18 @@ Route::get('/prodavnica/aksesoari', 'KategorijeController@Aksesoari')->name('aks
 
 
 //administracija routes
-Route::get('/home/korisnici', 'AdministracijaController@VratiKorisnike')->name('korisnici');
-Route::post('/home/BrisanjeKorisnika', ['uses'=>'AdministracijaController@BrisanjeKorisnika']);
-Route::get('/home/NalogKorisnika', ['uses'=>'AdministracijaController@NalogKorisnika','as'=>'NalogKorisnika']);
+Route::get('/nalog/korisnici', 'AdministracijaController@VratiKorisnike')->name('korisnici');
+Route::post('/nalog/BrisanjeKorisnika', ['uses'=>'AdministracijaController@BrisanjeKorisnika']);
+Route::get('/nalog/NalogKorisnika', ['uses'=>'AdministracijaController@NalogKorisnika','as'=>'NalogKorisnika']);
 Route::get('/Administracija/Roba', ['uses'=>'AdministracijaController@AdministracijaRobe','as'=>'AdministracijaRobe']);
-Route::post('/home/Promote', 'AdministracijaController@Promote');
+Route::post('/nalog/promote', 'AdministracijaController@Promote');
+
+//administracija proizvodi routes
+Route::get('/Administracija/DodajProizvod', 'AdministracijaController@DodajProizvod');
+Route::post('/Administracija/DodajProizvod', 'AdministracijaController@DodavanjeProizvoda');
+
+
+
 
 
 Auth::routes();

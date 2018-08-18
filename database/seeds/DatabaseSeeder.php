@@ -10,7 +10,23 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        // $this->call(UsersTableSeeder::class);
+    {   //Dodavanje kategorija
+        DB::table('kategorijas')->insert([
+            'naziv' => 'Odeca'
+        ]);
+        DB::table('kategorijas')->insert([
+            'naziv' => 'Obuca'
+        ]);
+        DB::table('kategorijas')->insert([
+            'naziv' => 'Aksesoari'
+        ]);
+        
+        //Dodavanje admina
+        DB::table('users')->insert([
+           'name' => 'Luka Milisavljevic',
+           'email' => 'lukamilisavljevic@gmail.com',
+           'role' => 'admin',
+           'stanjeRacuna' => 0
+        ]);
     }
 }
