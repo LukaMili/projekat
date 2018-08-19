@@ -34,7 +34,7 @@ Route::post('/nalog/promote', 'AdministracijaController@Promote');
 //administracija proizvodi routes
 Route::get('/Administracija/DodajProizvod', 'AdministracijaController@DodajProizvod');
 Route::post('/Administracija/DodajProizvod', 'AdministracijaController@DodavanjeProizvoda');
-
+Route::get('/Administracija/Roba', 'AdministracijaController@AdministracijaRobe')->name('roba');
 
 
 

@@ -5,6 +5,7 @@ namespace Laravel\Http\Controllers;
 use Illuminate\Http\Request;
 use Laravel\User;
 use Laravel\Kategorija;
+use Laravel\Proizvod;
 
 class AdministracijaController extends Controller
 {
@@ -48,10 +49,21 @@ class AdministracijaController extends Controller
         
     }
     
+     public function AdministracijaRobe()
+    {
+        $kategorije = Kategorija::all();
+        $proizvodi = Proizvod::all();
+        $data = ['kategorije'=>$kategorije,'proizvodi'=>$proizvodi];
+        
+        return view('admin.listaproizvoda')->with('data',$data);
+    }
+
+    
      public function DodajProizvod()
     {
         $kategorije = Kategorija::all();
-        $data = ['kategorije' => $kategorije];
+        $proizvodi=Proizvod::all();
+        $data = ['kategorije' => $kategorije,'proizvodi'=>$proizvodi];
         return view('admin.dodajproizvod')->with('data',$data);
     }
     public function DodavanjeProizvoda(Request $req)
@@ -68,7 +80,8 @@ class AdministracijaController extends Controller
         $proizvod->save();
         
         
-         return view('admin/listaproizvoda');
+    return redirect('/Administracija/Roba');
     }
-
+    
+    
 }

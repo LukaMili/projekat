@@ -70,7 +70,7 @@
               Pregled proizvoda i dodavanje novih
                 </div>
                 <div class="col md-6">
-                   <form method="get" action="/Administracija/DodajProizvod">
+                   <form method="get" action="{{action('AdministracijaController@AdministracijaRobe')}}">
                        <button class="btn btn-sm btn-secondary" type="submit" id="dugme">Pregled proizvoda</button>
                     </form>
                 </div>

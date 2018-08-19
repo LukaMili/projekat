@@ -2,8 +2,8 @@
 @extends('layouts.app')
 @section('content')
 <body>
-     <div class="card">
-                <div class="card-header">{{ __('DodajProizvod') }}</div>
+    <div class="card" style="background-color: beige">
+                <div class="card-header">Dodaj Proizvod</div>
                 <div class="card-body">
                     <form method="post" action='/Administracija/DodajProizvod' enctype="multipart/form-data">
                         {{csrf_field()}}
@@ -13,7 +13,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-md-4 col-form-label text-md-right"><label>Opis Proizvoda</label></div>
-                            <div class="col-md-6"><textarea maxlength="190" rows="6" type="text" name="opis" class=" form-control" placeholder="Unesite opis proizvoda(max 190 slova)" id="opis" required="true"></textarea></div>
+                            <div class="col-md-6"><textarea maxlength="190" rows="6" type="text" name="opis" class=" form-control" placeholder="Unesite opis proizvoda" id="opis" required="true"></textarea></div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-4 col-form-label text-md-right"><label>Kategorija proizvoda</label></div>
@@ -45,15 +45,15 @@
                         </div>
                          <div class="form-group row">
                             <div class="col-md-4 col-form-label text-md-right"><label for="naziv">Cena po komadu</label></div>
-                            <div class="col-md-6"><input type="number" name="cena" class=" form-control" placeholder="Unesite cenu proizvoda po komadu" id="cena" required="true"/></div>
+                            <div class="col-md-6"><input type="text" name="cena" class=" form-control" placeholder="Unesite cenu proizvoda po komadu" id="cena" required="true"/></div>
                         </div>
                         
                            <div class="form-group row">    
-                            <div class="col-md-6">
-                            <a href="/Administracija/Roba" ><button type="button" class="btn btn-danger form-control">Otkazi dodavanje</button></a>
+                            <div class="col-md-6" style="text-align: center">
+                                <a href="/Administracija/Roba" ><button type="button" style="width: 30%" class="btn btn-danger form-control">Otkazi dodavanje</button></a>
                             </div>
-                            <div class="col-md-6">
-                                <input type="submit" class="btn btn-success form-control"  value="Dodaj proizvod"/>
+                               <div class="col-md-6" style="text-align: center">
+                                <input type="submit" class="btn btn-success form-control" style="width: 30%" value="Dodaj proizvod"/>
                             </div>
                         </div>
                        

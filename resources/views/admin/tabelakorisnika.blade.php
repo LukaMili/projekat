@@ -135,6 +135,10 @@
             
                  </tbody>
             </table>
+             <br>
+             <div class="text-center">
+             <a href="/nalog"> <button class="btn btn-primary">Vrati se</button></a>   
+             </div>
             
             </div>
     </div>   
