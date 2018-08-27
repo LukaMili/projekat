@@ -5,9 +5,9 @@
     <div class="row">
         
         <div class="col-md-6">
-        <a href="/prodavnica/obuca">
+        <a href="/prodavnica/odeca">
             <img src="{{asset('slike/clothing_oncourt.jpg')}}" class="img-thumbnail float-left" style="background-color: beige; border: none">
-            <div class="caption" style="text-align: center;background-color: beige;"><strong>Obuca</strong></div>
+            <div class="caption" style="text-align: center;background-color: beige;"><strong>Odeca</strong></div>
         </a>
     </div>
         

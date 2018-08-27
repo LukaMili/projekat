@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'PagesController@pocetna')->name('pocetna');
-Route::get('/nalog', 'PagesController@nalog')->name('nalog');
+Route::get('/nalog', 'AdministracijaController@NalogTrenutnog')->name('nalog');
 Route::get('/prodavnica', 'PagesController@prodavnica')->name('prodavnica');
 
 Route::get('/prodavnica/odeca', 'KategorijeController@odeca')->name('odeca');
@@ -35,8 +35,6 @@ Route::post('/nalog/promote', 'AdministracijaController@Promote');
 Route::get('/Administracija/DodajProizvod', 'AdministracijaController@DodajProizvod');
 Route::post('/Administracija/DodajProizvod', 'AdministracijaController@DodavanjeProizvoda');
 Route::get('/Administracija/Roba', 'AdministracijaController@AdministracijaRobe')->name('roba');
-
-
 
 
 Auth::routes();

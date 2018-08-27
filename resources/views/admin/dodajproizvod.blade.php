@@ -34,7 +34,7 @@
                                 <small id="fileHelp" class="form-text text-muted">Odaberite sliku proizvoda koji dodajete</small>
                                     </div>
                                     <div class="col-md-6">
-                                <img  id="blah" alt="Nija izabrana slika"  width="200" height="200" />
+                                        <img src="{{asset("slike/ikonice/nopicture.png")}}" id="blah" alt="Nija izabrana slika"  width="200" height="200" />
                                     </div>
                                 </div>
                             </div>

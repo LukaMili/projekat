@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Laravel\User;
 use Laravel\Kategorija;
 use Laravel\Proizvod;
+use Laravel\Transakcija;
 
 class AdministracijaController extends Controller
 {
@@ -23,6 +24,15 @@ class AdministracijaController extends Controller
         return redirect('/nalog/korisnici');
     }
     
+    public function NalogTrenutnog(){
+        $user= auth()->user();
+        $trans = $user->Transakcije;
+        $data = ['user' => $user,'Transakcije' => $trans];
+        
+        return view('pages.nalog')->with('data',$data);
+    }
+
+
     public function NalogKorisnika(Request $req)
     {
         $user = User::Find($req->id);
