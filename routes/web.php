@@ -23,6 +23,8 @@ Route::get('/prodavnica/odeca', 'KategorijeController@odeca')->name('odeca');
 Route::get('/prodavnica/obuca', 'KategorijeController@obuca')->name('obuca');
 Route::get('/prodavnica/aksesoari', 'KategorijeController@Aksesoari')->name('aksesoari');
 
+Route::get('/proizvod', 'KorisnikController@prikazi');
+
 
 //administracija routes
 Route::get('/nalog/korisnici', 'AdministracijaController@VratiKorisnike')->name('korisnici');

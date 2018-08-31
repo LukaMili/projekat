@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Transakcija;
 use Laravel\Korpa;
 use Laravel\User;
+use Laravel\Proizvod;
 
 class KorisnikController extends Controller
 {
@@ -42,7 +43,11 @@ class KorisnikController extends Controller
         return redirect('/nalog');
     }
    
-    
+    public function prikazi(Request $req)
+                        {
+                        $proizvod= Proizvod::find($req->id);
+                        return view('pages.proizvod')->with('proizvod',$proizvod);
+                        }
   
     public function KorpaKorisnika(Request $req)
     {
