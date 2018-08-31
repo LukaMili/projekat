@@ -19,4 +19,7 @@ class PagesController extends Controller
         {
             return view('pages.prodavnica');
         }
+        public function uplati(){
+            return view('korisnik.uplati');
+        }
 }

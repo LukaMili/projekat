@@ -4,15 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/home.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/korisnik/nalogizabranog.blade.php</file>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/routes/web.php</file>
-            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/admin/dodajproizvod.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/app/Transakcija.php</file>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/public/css/stil.css</file>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/app/Http/Controllers/AdministracijaController.php</file>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/pages/nalog.blade.php</file>
             <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/layouts/app.blade.php</file>
-            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/admin/tabelakorisnika.blade.php</file>
-            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/admin/listaproizvoda.blade.php</file>
-            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/database/migrations/2018_08_18_215719_create_proizvods_table.php</file>
+            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/app/Http/Controllers/KorisnikController.php</file>
+            <file>file:/C:/xampp/htdocs/laravelprojekat/projekat/resources/views/korisnik/uplati.blade.php</file>
         </group>
     </open-files>
 </project-private>

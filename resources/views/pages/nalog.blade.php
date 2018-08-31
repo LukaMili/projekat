@@ -18,7 +18,7 @@
             Stanje na racunu: <strong>{{auth()->user()->stanjeRacuna}} din</strong> 
                 </div>
                 <div class="col md-6">
-            <a href=""> <div class="btn btn-sm btn-secondary" id="dugme">Uplatite sredstva</div></a>
+                    <a href="/nalog/uplati"> <button class="btn btn-sm btn-secondary" id="dugme">Uplatite sredstva</button></a>
                 </div>
             </div>
             
@@ -59,7 +59,9 @@
             Pregled korisnika i promovisanje uloge 
                 </div>
                 <div class="col md-6">
-            <a href="/nalog/korisnici"> <div class="btn btn-sm btn-secondary" id="dugme">Pregled korisnika</div></a>
+             <form method="get" action="{{action('PagesController@uplati')}}">
+                       <button class="btn btn-sm btn-secondary" type="submit" id="dugme">Uplati sredstva</button>
+                    </form>
                 </div>
             </div>
             

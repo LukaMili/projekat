@@ -2,6 +2,7 @@
 
 namespace Laravel\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Laravel\Transakcija;
 use Laravel\Korpa;
@@ -26,11 +27,11 @@ class KorisnikController extends Controller
         
         return redirect("/");
     }
-    public function DoplatiNovac(Request $doplata)
+    public function DoplatiNovac(Request $req)
     {
-        
+   
         $user = User::Find(Auth::user()->id);
-        $iznos = $doplata->iznos;
+        $iznos = $req->iznos;
         $Transakcija = new Transakcija;
         $Transakcija->iznos = $iznos;
         $Transakcija->komentar = 'Korisnik uplatio novac na racun';

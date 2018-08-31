@@ -36,6 +36,8 @@ Route::get('/Administracija/DodajProizvod', 'AdministracijaController@DodajProiz
 Route::post('/Administracija/DodajProizvod', 'AdministracijaController@DodavanjeProizvoda');
 Route::get('/Administracija/Roba', 'AdministracijaController@AdministracijaRobe')->name('roba');
 
+Route::get('/nalog/uplati', 'PagesController@uplati');
+Route::post('/nalog/uplati','KorisnikController@DoplatiNovac');
 
 Auth::routes();
 
