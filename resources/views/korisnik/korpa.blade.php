@@ -10,7 +10,7 @@
     
 </script>
 </head>
-
+@if($proizvodi)
 <div class="jumbotron">
     <div class="row">
     @foreach($proizvodi as $proizvod)
@@ -46,7 +46,13 @@
     @endforeach
     </div>
 </div>
-
+@else
+<div class="jumbotron">
+    <p>Nema proizvoda u korpi</p>
+    <p>Kliknite ovde kako biste otisli u prodavnicu</p>
+    <a href="/prodavnica"><button class="btn btn-default">Prodavnica</button></a>
+</div>
+@endif
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">

@@ -31,11 +31,11 @@
     </div>
     
     <div class="col-md-6>">
-         <div>
+        <div style="overflow: hidden">
     <h3>{{$proizvod->naziv}}</h3>
     <br>
     
-        <p>{{$proizvod->opis}}</p>
+    <p style="max-width: 500px;">{{$proizvod->opis}}</p>
         
      <ul class="list-group list-group-flush">
      
@@ -47,7 +47,7 @@
         
         <form method="post" name="forma" onchange="izaberi()" action="/proizvod/dodajukorpu"> 
             
-          
+          @if($proizvod->kategorija_id=='1' or $proizvod->kategorija_id=='3')
         <div class="text-center">
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-secondary">
@@ -71,6 +71,21 @@
                     </label>
         </div>
         </div>
+          @else
+          <div class="form-group">
+      <label for="exampleSelect1">Izaberite velicinu</label>
+      <select class="form-control" id="velicina" name="velicina">
+        <option>40</option>
+        <option>41</option>
+        <option>42</option>
+        <option>43</option>
+        <option>44</option>
+        <option>45</option>
+        <option>46</option>
+        <option>47</option>
+      </select>
+    </div>
+          @endif
         <br><br>
            
         
