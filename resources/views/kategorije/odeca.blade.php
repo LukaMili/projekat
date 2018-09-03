@@ -16,7 +16,7 @@
     <div class="col-md-4" >
         
         
-        <!-- Dodaj action gde da salje -->
+        
         
         <form method="get" action="/proizvod" > 
             

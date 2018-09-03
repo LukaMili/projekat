@@ -2,6 +2,7 @@
 
 namespace Laravel\Http\Controllers;
 
+use Illuminate\Session;
 use Illuminate\Http\Request;
 use Laravel\Proizvod;
 use Laravel\Korpa;
@@ -9,7 +10,7 @@ use Laravel\User;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Kategorija;
 
-class ProizvodiController extends Controller
+class ProizvodController extends Controller
 {
     
      public function __construct()
@@ -43,11 +44,12 @@ public function  DodajUKorpu(Request $req)
     $proizvod = Proizvod::find($proizvodID);
     $proizvod->kolicina -= $kolicina;
     $proizvod->save();
+    
     return redirect('/nalog/korpa');
 }
 public function ObrisiIzKorpe(Request $req)
 {
-    $celaKorpa = User::Find(Auth::user()->id)->korpe->where("proizvod_id",$req->id);
+   $celaKorpa = User::Find(Auth::user()->id)->korpe->where("proizvod_id",$req->id);
     foreach ($celaKorpa as $k)
     {
         if($k->proizvod_id == $req->id)

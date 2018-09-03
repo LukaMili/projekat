@@ -3,6 +3,6 @@
 
 
 <div class="jumbotron">
-    <p>Nalog {{$data['user']->name}}</p>
+    <p>Nalog: {{$data['user']->name}}</p>
 </div>
 @endsection

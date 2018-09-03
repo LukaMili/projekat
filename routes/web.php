@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/', 'PagesController@pocetna')->name('pocetna');
 Route::get('/nalog', 'AdministracijaController@NalogTrenutnog')->name('nalog');
+Route::get('/nalog/korpa', 'KorisnikController@KorpaKorisnika')->name('korpa');
 Route::get('/prodavnica', 'PagesController@prodavnica')->name('prodavnica');
 
 Route::get('/prodavnica/odeca', 'KategorijeController@odeca')->name('odeca');
@@ -24,7 +25,9 @@ Route::get('/prodavnica/obuca', 'KategorijeController@obuca')->name('obuca');
 Route::get('/prodavnica/aksesoari', 'KategorijeController@Aksesoari')->name('aksesoari');
 
 Route::get('/proizvod', 'KorisnikController@prikazi');
+Route::post('/proizvod/dodajukorpu', 'ProizvodController@DodajUKorpu');
 
+Route::post('/nalog/korpa/obrisi','ProizvodController@ObrisiIzKorpe');
 
 //administracija routes
 Route::get('/nalog/korisnici', 'AdministracijaController@VratiKorisnike')->name('korisnici');

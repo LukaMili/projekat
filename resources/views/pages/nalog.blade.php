@@ -39,9 +39,13 @@
                 <div class="col md-6">
               Moja korpa
                 </div>
+                 
                 <div class="col md-6">
-                    <a href=""> <div class="btn btn-sm btn-secondary" id="dugme">Moja korpa</div></a>
+                    <form method="get" action="/nalog/korpa">
+                    <button type="submit" class="btn btn-sm btn-secondary" id="dugme">Moja korpa</button>
+                    </form>
                 </div>
+                 
             </div>
         </div>
 

@@ -66,7 +66,7 @@ class KorisnikController extends Controller
                 array_push($proizvodi, $proizvod);
             }
         }
-        return view('Korisnik.Korpa')->with('proizvodi',$proizvodi)->with('ukupnaCena',$ukupnaCena);
+        return view('korisnik.korpa')->with('proizvodi',$proizvodi)->with('ukupnaCena',$ukupnaCena);
     }
     public function Kupi()
     {
