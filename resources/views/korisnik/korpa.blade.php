@@ -10,6 +10,18 @@
     
 </script>
 </head>
+  @if(session()->has('uspeh'))
+   <div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  Transakcija uspesno obavljena! hvala vam sto poslujete sa nama
+</div>
+@endif
+@if(session()->has('greska'))
+   <div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  Nemate dovoljno novca na racunu, molimo vas doplatite novac na racun, pa pokusajte ponovo
+</div>
+@endif
 @if($proizvodi)
 <div class="jumbotron">
     <div class="row">
@@ -44,6 +56,19 @@
       </div>
     </div>
     @endforeach
+    </div>
+    
+    <div class="text-center">
+        @if($proizvodi)
+        <form action="/nalog/korpa/kupi" method="post">
+            {{csrf_field()}}
+            <button onclick="return confirm('molimo vas potvrdite kupovinu')" class="btn btn-success" style="margin-right: 30px;" type="submit">Kupi Proizvode</button>
+        
+            @endif
+            <a href="javascript:history.back()"> <button class="btn btn-warning">
+        Nazad
+            </button></a>
+        </form>
     </div>
 </div>
 @else

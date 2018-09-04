@@ -8,6 +8,10 @@ use Laravel\Transakcija;
 use Laravel\Korpa;
 use Laravel\User;
 use Laravel\Proizvod;
+use Illuminate\Support\Facades\DB;
+use Laravel\Racun;
+use Laravel\stavkaRacuna;
+
 
 class KorisnikController extends Controller
 {
@@ -84,13 +88,13 @@ class KorisnikController extends Controller
                 $proizvod = $k->Proizvod;
                 $ukupnaCena+=$proizvod->cenaPoKomadu * $k->kolicina;
             }
-        if($ukupnaCena>$user->stanjeNaRacunu)
+        if($ukupnaCena>$user->stanjeRacuna)
         {
               return redirect()->back()->with('greska', true);
         }
         else
         {
-            $user->stanjeNaRacunu-=$ukupnaCena;
+            $user->stanjeRacuna-=$ukupnaCena;
             $user->save();
             $transakcija = new Transakcija;
             $transakcija->user_id = $user->id;
