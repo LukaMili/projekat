@@ -19,8 +19,8 @@ class AdministracijaController extends Controller
 
     public function BrisanjeKorisnika(Request $req)
     {
-        $nes = $req->id;
-        User::destroy([$nes]);
+        $user = $req->id;
+        User::destroy([$user]);
         return redirect('/nalog/korisnici');
     }
     

@@ -35,3 +35,30 @@ body{
 
 }
 
+.slikacont{
+    position: relative;
+    text-align: center; 
+    
+}
+.centriran{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+}
+
+#slikaforma:hover,#slikaforma2:hover{
+    filter:blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+#slika:hover{
+  filter:blur(2px);
+    -webkit-filter: blur(2px);  
+}
+.table-wrapper-scroll-y{
+    display: block;
+    max-height: 300px;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
