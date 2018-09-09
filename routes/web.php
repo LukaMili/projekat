@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Route::get('/', 'PagesController@pocetna')->name('pocetna');
 Route::get('/nalog', 'AdministracijaController@NalogTrenutnog')->name('nalog');
+Route::post('/nalog/prikaziracune','KorisnikController@Racuni');
+Route::post('/nalog/prikaziracun','KorisnikController@PrikaziIzabraniRacun');
+
 Route::get('/nalog/korpa', 'KorisnikController@KorpaKorisnika')->name('korpa');
 Route::post('/nalog/korpa/kupi','KorisnikController@Kupi');
 Route::get('/prodavnica', 'PagesController@prodavnica')->name('prodavnica');

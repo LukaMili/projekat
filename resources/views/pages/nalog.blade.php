@@ -28,12 +28,16 @@
             
             <div class="row">
                 <div class="col md-6">
-              Pregled kupovina i racuna
+            Pregled kupovina i racuna:
                 </div>
                 <div class="col md-6">
-             <a href=""> <div class="btn btn-sm btn-secondary" id="dugme">Pregled kupovina</div></a>
+                    <form method="post" action="/nalog/prikaziracune">
+                        {{csrf_field()}}
+                       <button class="btn btn-sm btn-secondary" type="submit" id="dugme">Pregled kupovina</button>
+                    </form>
                 </div>
             </div>
+            
              <br><br>
              <div class="row">
                 <div class="col md-6">

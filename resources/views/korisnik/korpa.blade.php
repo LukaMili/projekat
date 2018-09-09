@@ -27,7 +27,7 @@
     <div class="row">
     @foreach($proizvodi as $proizvod)
     <div class="col-md-3">
-      <div class="card" style=" width: 100%; display: inline-block;float: left; margin-top: 20px;">
+      <div class="card" style=" width: 100%; display: inline-block;float: left; margin-top: 20px; border: 1px silver solid;">
           
           <div class="containercard">  
  

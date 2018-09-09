@@ -111,7 +111,7 @@ class KorisnikController extends Controller
                 array_push($zaBrisanje, $k->id);
                 $proizvod = $k->Proizvod;
                  $stavka= new stavkaRacuna();
-                 $stavka-> racun_id = $RacunId;
+                 $stavka->racun_id = $RacunId;
                  $stavka->iznos = $k->kolicina*$proizvod->cenaPoKomadu;
                  $stavka->nazivProizvoda = $proizvod->naziv;
                  $stavka->proizvod_id = $proizvod->id;
@@ -133,15 +133,16 @@ class KorisnikController extends Controller
         {
             $id = Auth::user()->id;
         }
-        $user = User::find($id);
+        $user = User::Find($id);
         $racuni = $user->Racuni;
-        return view('Korisnik.PrikaziRacune')->with('racuni',$racuni);
+        return view('korisnik.PrikazRacuna')->with('racuni',$racuni);
     }
-    public function PrikazRacuna(Request $req)
+    public function PrikaziIzabraniRacun(Request $req)
     {
         $racun = Racun::Find($req->id);
+        
         $stavke = $racun->Stavke;
-        return view('Korisnik.PrikazRacuna')->with('racun',$racun)->with('stavke',$stavke);
+        return view('korisnik.PrikaziIzabraniRacun')->with('racun',$racun)->with('stavke',$stavke);
     }
 }
 

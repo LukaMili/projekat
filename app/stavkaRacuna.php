@@ -12,7 +12,7 @@ class stavkaRacuna extends Model
     
     public function Racun()
     {
-        return $this->belongsTo('App\Racun');
+        return $this->belongsTo('Laravel\Racun');
     }
     
 }

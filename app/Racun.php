@@ -12,10 +12,10 @@ class Racun extends Model
     
      public function User()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('Laravel\User');
     }
      public function Stavke()
     {
-        return $this->hasMany('App\stavkaRacuna');
+        return $this->hasMany('Laravel\stavkaRacuna');
     }
 }
