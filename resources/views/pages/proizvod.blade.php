@@ -47,7 +47,7 @@
         
         <form method="post" name="forma" onchange="izaberi()" action="/proizvod/dodajukorpu"> 
             
-          @if($proizvod->kategorija_id=='1' or $proizvod->kategorija_id=='3')
+          @if($proizvod->kategorija_id=='1')
         <div class="text-center">
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-secondary">
@@ -71,7 +71,9 @@
                     </label>
         </div>
         </div>
-          @else
+          <br><br>
+          @endif
+          @if($proizvod->kategorija_id=='2')
           <div class="form-group">
       <label for="exampleSelect1">Izaberite velicinu</label>
       <select class="form-control" id="velicina" name="velicina">
@@ -85,12 +87,13 @@
         <option>47</option>
       </select>
     </div>
+          <br><br>
           @endif
-        <br><br>
+        
            
         
         
-        <div> 
+        <div class="float-left" style="margin-left: 10px"> 
               {{ csrf_field() }}
             <input type="number" value="1" name="kolicina" max="{{$proizvod->kolicina}}" min="1" width="5%"> 
             

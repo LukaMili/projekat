@@ -10,18 +10,7 @@
     
 </script>
 </head>
-  @if(session()->has('uspeh'))
-   <div class="alert alert-dismissible alert-success">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  Transakcija uspesno obavljena! hvala vam sto poslujete sa nama
-</div>
-@endif
-@if(session()->has('greska'))
-   <div class="alert alert-dismissible alert-danger">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  Nemate dovoljno novca na racunu, molimo vas doplatite novac na racun, pa pokusajte ponovo
-</div>
-@endif
+  
 @if($proizvodi)
 <div class="jumbotron">
     <div class="row">
@@ -57,6 +46,7 @@
     </div>
     @endforeach
     </div>
+    <br><br>
     
     <div class="text-center">
         @if($proizvodi)
@@ -73,6 +63,18 @@
 </div>
 @else
 <div class="jumbotron">
+    @if(session()->has('uspeh'))
+   <div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  Uspesno ste izvrsili kupovinu!
+</div>
+@endif
+@if(session()->has('greska'))
+   <div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  Neuspesno obavljena kupvina, molimo Vas uplatite sredstva na racun pa pokusajte ponovo!
+</div>
+@endif
     <p>Nema proizvoda u korpi</p>
     <p>Kliknite ovde kako biste otisli u prodavnicu</p>
     <a href="/prodavnica"><button class="btn btn-default">Prodavnica</button></a>
