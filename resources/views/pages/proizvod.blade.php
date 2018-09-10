@@ -100,6 +100,7 @@
         <br><br>
         
         <div class="text-center"> 
+            @if (Auth::user())
             @if (($proizvod->kolicina)>1)
             <label for="btn">
                 Dodaj u korpu!
@@ -109,6 +110,7 @@
             </button>
             @else 
             <button class="btn btn-danger" disabled="">Nema na stanju</button>
+            @endif
             @endif
         </div>
         <input type="hidden" value="{{$proizvod->id}}" name="id">

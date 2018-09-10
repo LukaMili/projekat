@@ -18,9 +18,9 @@
             Stanje na racunu: <strong>{{auth()->user()->stanjeRacuna}} din</strong> 
                 </div>
                 <div class="col md-6">
-                    <form method="get" action="{{action('PagesController@uplati')}}">
-                       <button class="btn btn-sm btn-secondary" type="submit" id="dugme">Uplati sredstva</button>
-                    </form>
+                    
+                       <button class="btn btn-sm btn-secondary" type="button" data-toggle="modal" data-target="#myModal" id="dugme">Uplati sredstva</button>
+                    
                 </div>
             </div>
             
@@ -28,7 +28,7 @@
             
             <div class="row">
                 <div class="col md-6">
-            Pregled kupovina i racuna:
+            Pregled kupovina i racuna
                 </div>
                 <div class="col md-6">
                     <form method="post" action="/nalog/prikaziracune">
@@ -97,6 +97,9 @@
             
         </div>
         
+
+    
+    
        <script>
            var form = document.getElementById("formaAdminKorisnici");
            var form2 = document.getElementById("formaAdminKorisnici2");
@@ -113,6 +116,31 @@
         
     @endif
     
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="margin-top: 50%">
+      <div class="modal-header">
+          <h4 class="modal-title">Uplacivanje sredstava</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+      </div>
+      <div class="modal-body">
+          <form method="post" action="{{action('KorisnikController@DoplatiNovac')}}" style="text-align: center">
+              {{csrf_field()}}
+              <input type="text" placeholder="Unesite cifru" name="iznos" style="width: 80%;height: 37px;margin-left: auto">
+          
+      </div>
+      <div class="modal-footer">
+          <button type="submit" class="btn btn-secondary" style="width: 33%;margin: 0 auto;">Uplati</button>
+        
+      </div>
+    </form>
+</div>
+  </div>
+</div>
   
     @endsection
 
