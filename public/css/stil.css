@@ -11,6 +11,9 @@
   top: 0;
 
 }
+.jumbotron{
+    border-radius: 0px !important;
+}
 body{
       background-attachment: fixed;
       background-repeat: no-repeat; 
@@ -89,4 +92,14 @@ body{
 
 #kartica:hover{
     border: 2px solid darkslategrey;
+}
+
+#ikonica-slika{
+
+    transition: all .2s ease-in-out;
+    width: 70px;
+    margin: 10px;
+}
+#ikonica-slika:hover{
+    transform: scale(1.3);
 }
