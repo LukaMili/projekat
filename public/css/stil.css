@@ -46,8 +46,32 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);   
 }
+.centriran h1{
+    
+        color:white ;text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    
+}
+.centriran p{
+    
+        color:white ;text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    
+}
+.doledesno{
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
 
-#slikaforma:hover,#slikaforma2:hover{
+.doledesno h3{
+           color:white ;text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+ 
+}
+.doledesno p{
+           color:white ;text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+ 
+}
+
+#slikaforma:hover,#slikaforma2:hover,#slikaforma3:hover,#slikaforma4:hover{
     filter:blur(3px);
     -webkit-filter: blur(3px);
 }
