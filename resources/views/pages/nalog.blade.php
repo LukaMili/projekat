@@ -21,7 +21,7 @@
                 
                         <a data-toggle="modal" data-target="#myModal"><img id="slikaforma" src="{{asset('slike/resp-main.jpg')}}" width="100%" height="330px" alt="Proizvodi" onclick="submit" style="cursor: pointer">
                             <div class="centriran" style="cursor: pointer">
-                                    <h1 style="">Stanje Na Racunu</h1>
+                                    <h1 style="">Uplacivanje sredstava</h1>
                                     <p class="small">Kliknite da dodate sredstva</p>
                                 </div></a>
                         

@@ -7,6 +7,7 @@ use Laravel\User;
 use Laravel\Kategorija;
 use Laravel\Proizvod;
 use Laravel\Transakcija;
+use Illuminate\Support\Facades\Storage;
 
 class AdministracijaController extends Controller
 {
@@ -24,7 +25,17 @@ class AdministracijaController extends Controller
         return redirect('/nalog/korisnici');
     }
     
-    public function NalogTrenutnog(){
+    public function DodajNaStanjeProizvod(Request $req)
+    {
+        $proizvodid=$req->id;
+        $proizvod=Proizvod::find($proizvodid);
+        $kolicina=$req->kolicina;
+        $proizvod->kolicina+=$kolicina;
+        $proizvod->save();
+        return redirect()->back();
+    }
+
+        public function NalogTrenutnog(){
         $user= auth()->user();
         $trans = $user->Transakcije;
         $data = ['user' => $user,'Transakcije' => $trans];
@@ -91,6 +102,16 @@ class AdministracijaController extends Controller
         
         
     return redirect('/Administracija/Roba');
+    }
+    
+     public function ObrisiProizvod(Request $req)
+    {
+        $proizvod = Proizvod::Find($req->id);
+        Storage::delete($proizvod->slika);
+        
+        Proizvod::destroy([$req->id]);
+        
+        return redirect('/Administracija/Roba');
     }
     
     

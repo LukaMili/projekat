@@ -44,7 +44,8 @@
     
   </ul>
         <br><br>
-        
+        @if(auth::user())
+       @if (Auth::user()->role=="korisnik") 
         <form method="post" name="forma" onchange="izaberi()" action="/proizvod/dodajukorpu"> 
             
           @if($proizvod->kategorija_id=='1')
@@ -103,7 +104,7 @@
         <br><br>
         
         <div class="text-center"> 
-            @if (Auth::user())
+            
             @if (($proizvod->kolicina)>1)
             <label for="btn">
                 Dodaj u korpu!
@@ -114,11 +115,43 @@
             @else 
             <button class="btn btn-danger" disabled="">Nema na stanju</button>
             @endif
-            @endif
+            
         </div>
         <input type="hidden" value="{{$proizvod->id}}" name="id">
         <input type="hidden" id="velicinahiddenid" name="velicinahidden">
         </form>
+       @endif
+       
+       @if(Auth::user()->role=="admin")
+       <div class="row">
+           <div class="col-md-6">
+           <form method="post" action="/proizvod/dodajnastanje">
+               {{csrf_field()}}
+               <p>Dodajte na stanje</p>
+               <input type="hidden" value="{{$proizvod->id}}" name="id">
+               
+           <input type="number" width="60px" name="kolicina">
+           <br></br>
+           <input type="submit" class="btn btn-sm btn-secondary" value="Dodaj na stanje">
+           </form>
+           </div>
+       
+           <div class="col-md-6 float-right">
+               
+               <form method="post" action="/Administracija/ObrisiProizvod">
+                 <br><br>
+                 {{csrf_field()}}
+                 <button onclick="return confirm('Da li ste sigurni da zelite da obrisete proizvod?')" data-toggle="tooltip" data-placement="top" title="Obrisi proizvod" type="submit" id="btn" style="float: right;background-color: transparent;border: none;cursor: pointer">
+                 <img src="{{asset('slike/ikonice/obrisi.png')}}" width="70px" style="float: right">
+                 <input type="hidden" value="{{$proizvod->id}}" name="id">
+                             </button>
+       </form>  
+           </div>
+       </div>
+       @endif
+       @endif
+       
+       
   </div>
     </div>
     </div>

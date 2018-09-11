@@ -30,6 +30,7 @@ Route::get('/prodavnica/aksesoari', 'KategorijeController@Aksesoari')->name('aks
 
 Route::get('/proizvod', 'KorisnikController@prikazi');
 Route::post('/proizvod/dodajukorpu', 'ProizvodController@DodajUKorpu');
+Route::post('/proizvod/dodajnastanje', 'AdministracijaController@DodajNaStanjeProizvod');
 
 Route::post('/nalog/korpa/obrisi','ProizvodController@ObrisiIzKorpe');
 
@@ -43,6 +44,7 @@ Route::post('/nalog/promote', 'AdministracijaController@Promote');
 //administracija proizvodi routes
 Route::get('/Administracija/DodajProizvod', 'AdministracijaController@DodajProizvod');
 Route::post('/Administracija/DodajProizvod', 'AdministracijaController@DodavanjeProizvoda');
+Route::post('/Administracija/ObrisiProizvod', 'AdministracijaController@ObrisiProizvod');
 Route::get('/Administracija/Roba', 'AdministracijaController@AdministracijaRobe')->name('roba');
 
 //Route::get('/nalog/uplati', 'PagesController@uplati');
